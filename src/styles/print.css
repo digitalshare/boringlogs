@@ -1,0 +1,47 @@
+/* Print output: one 8.5x11in SVG sheet per page, nothing else. */
+
+@page {
+  size: letter;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    margin: 0;
+    height: auto;
+  }
+
+  .app-chrome,
+  .print-toolbar {
+    display: none !important;
+  }
+
+  .print-view {
+    background: #fff !important;
+    padding: 0 !important;
+    min-height: 0;
+  }
+
+  .sheet-page {
+    width: 8.5in;
+    height: 11in;
+    margin: 0;
+    box-shadow: none !important;
+    page-break-after: always;
+    break-after: page;
+    overflow: hidden;
+  }
+
+  .sheet-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  /* keep hatches, table shading, and solid fills */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
