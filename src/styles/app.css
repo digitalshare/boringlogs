@@ -137,8 +137,8 @@ body {
   background: #3d4c62;
 }
 
-.sidebar .print-all {
-  margin-top: auto;
+.sidebar .print-all,
+.sidebar .export-excel {
   background: var(--accent);
   color: #fff;
   border: none;
@@ -149,7 +149,12 @@ body {
   cursor: pointer;
 }
 
-.sidebar .print-all:hover {
+.sidebar .export-excel {
+  margin-top: auto;
+}
+
+.sidebar .print-all:hover,
+.sidebar .export-excel:hover {
   background: #2a6fd6;
 }
 

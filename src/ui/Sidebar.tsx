@@ -135,6 +135,16 @@ export function Sidebar() {
         ))}
       </div>
 
+      <button
+        className="export-excel"
+        onClick={() => {
+          import('../store/excelExport')
+            .then(({ exportProjectXlsx }) => exportProjectXlsx(project))
+            .catch((e) => alert(`Excel export failed: ${e instanceof Error ? e.message : e}`))
+        }}
+      >
+        Export Excel…
+      </button>
       <button className="print-all" onClick={() => setPrintMode(true)}>
         Print / Export PDF…
       </button>

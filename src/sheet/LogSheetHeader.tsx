@@ -1,13 +1,7 @@
 import type { Project, Boring } from '../types'
 import { BORDER, HEADER, FONT } from './layout'
 import { Logo } from './Logo'
-
-function waterText(b: Boring): string {
-  const when = b.water.date || b.water.time ? ` (${[b.water.date, b.water.time].filter(Boolean).join(', ')})` : ''
-  if (!b.water.encountered) return `None Encountered${when}`
-  const depth = b.water.depthFt !== undefined ? `${b.water.depthFt}'` : ''
-  return `${depth}${when}`
-}
+import { waterText } from '../domain/water'
 
 interface Props {
   project: Project
